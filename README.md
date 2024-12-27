@@ -2,6 +2,27 @@
 
 Application web de gestion d'assurance automobile permettant aux amazones de générer des revenus complémentaires via la vente de produits d'assurance automobile.
 
+## Captures d'écran
+
+### Page d'Accueil
+![Page d'Accueil](docs/images/home.png)
+*Page d'accueil présentant les différents produits d'assurance*
+
+### Simulation
+![Simulation](docs/images/simulation.png)
+*Interface de simulation de prime d'assurance*
+
+### Souscription
+![Souscription Étape 1](docs/images/subscription-step1.png)
+*Étape 1 : Informations du véhicule*
+
+![Souscription Étape 2](docs/images/subscription-step2.png)
+*Étape 2 : Informations de l'assuré*
+
+![Souscription Étape 3](docs/images/subscription-step3.png)
+*Étape 3 : Récapitulatif et confirmation*
+
+
 ## Technologies Utilisées
 
 - React.js 18.2.0
@@ -10,6 +31,66 @@ Application web de gestion d'assurance automobile permettant aux amazones de gé
 - Yup (Validation des formulaires)
 - Axios (Appels API)
 - React Router DOM 6.15.0
+
+## Installation et Configuration
+
+### 1. Configuration de Git (Important pour Windows)
+```bash
+# Configurer Git pour la gestion des fins de ligne
+git config --global core.autocrlf false
+git config --global core.eol lf
+
+# Normaliser les fins de ligne
+git add --renormalize .
+git commit -m "Normalize line endings"
+```
+
+### 2. Installation des Dépendances
+
+```bash
+# Installation de Material-UI et ses dépendances
+npm install @mui/material @emotion/react @emotion/styled @mui/icons-material
+
+# Installation des autres dépendances
+npm install react-router-dom formik yup axios
+
+# Ou installation complète via package.json
+npm install
+```
+
+### 3. Configuration de Material-UI
+
+1. Ajouter la police Roboto dans `public/index.html` :
+```html
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+/>
+```
+
+2. Ajouter les icônes Material :
+```html
+<link
+  rel="stylesheet"
+  href="https://fonts.googleapis.com/icon?family=Material+Icons"
+/>
+```
+
+### 4. Démarrage de l'Application
+
+```bash
+# Démarrage en mode développement
+npm start
+
+# Construction pour la production
+npm run build
+```
+
+### 5. Configuration de l'API
+Modifier l'URL de l'API dans `src/services/api.js` :
+```javascript
+const API_BASE_URL = 'http://localhost:9090/api/v1';
+```
 
 ## Structure du Projet
 
@@ -89,7 +170,7 @@ Basée sur la puissance fiscale :
 - 2 CV : 37 601 FCFA
 - 3 à 6 CV : 45 181 FCFA
 - 7 à 10 CV : 51 078 FCFA
-- 11 �� 14 CV : 65 677 FCFA
+- 11 à 14 CV : 65 677 FCFA
 - 15 à 23 CV : 86 456 FCFA
 - > 24 CV : 104 143 FCFA
 
@@ -154,3 +235,67 @@ L'application est entièrement responsive grâce à Material-UI :
 - Adaptation automatique aux différentes tailles d'écran
 - Composants optimisés pour mobile
 - Navigation adaptative 
+
+## Résolution des Problèmes Courants
+
+### 1. Erreurs de Fins de Ligne (CRLF/LF)
+Si vous rencontrez des avertissements concernant CRLF/LF :
+```bash
+# Nettoyer l'installation
+rd /s /q node_modules
+npm cache clean --force
+
+# Réinstaller les dépendances
+npm install
+```
+
+### 2. Problèmes de Connexion à l'API
+- Vérifier que le backend est en cours d'exécution
+- Vérifier que l'URL dans `api.js` correspond au backend
+- Vérifier les logs dans la console du navigateur (F12)
+
+### 3. Erreurs Material-UI
+- Vérifier que toutes les dépendances sont installées
+- Vérifier que les polices sont correctement importées
+- Vérifier la configuration du thème dans `App.js`
+
+## Déploiement
+
+### 1. Préparation pour la Production
+```bash
+# Construction de l'application
+npm run build
+
+# Test de la version de production
+serve -s build
+```
+
+### 2. Configuration des Variables d'Environnement
+Créer un fichier `.env` à la racine du projet :
+```env
+REACT_APP_API_URL=http://votre-api-url
+```
+
+## Maintenance
+
+### Mise à Jour des Dépendances
+```bash
+# Vérifier les mises à jour disponibles
+npm outdated
+
+# Mettre à jour les dépendances
+npm update
+```
+
+### Scripts Disponibles
+- `npm start` : Démarre l'application en mode développement
+- `npm test` : Lance les tests
+- `npm run build` : Construit l'application pour la production
+- `npm run eject` : Éjecte la configuration CRA (irréversible)
+
+## Support et Contact
+
+Pour toute question ou problème :
+1. Consulter la documentation
+2. Vérifier les logs de la console
+3. Contacter l'équipe de développement 
