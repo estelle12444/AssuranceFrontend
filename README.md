@@ -58,38 +58,11 @@ npm install react-router-dom formik yup axios
 npm install
 ```
 
-### 3. Configuration de Material-UI
-
-1. Ajouter la police Roboto dans `public/index.html` :
-```html
-<link
-  rel="stylesheet"
-  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-/>
-```
-
-2. Ajouter les icônes Material :
-```html
-<link
-  rel="stylesheet"
-  href="https://fonts.googleapis.com/icon?family=Material+Icons"
-/>
-```
-
-### 4. Démarrage de l'Application
-
-```bash
-# Démarrage en mode développement
-npm start
-
-# Construction pour la production
-npm run build
-```
 
 ### 5. Configuration de l'API
 Modifier l'URL de l'API dans `src/services/api.js` :
 ```javascript
-const API_BASE_URL = 'http://localhost:9090/api/v1';
+const API_BASE_URL = 'http://localhost:8080/api/v1';
 ```
 
 ## Structure du Projet
@@ -289,13 +262,10 @@ npm update
 
 ### Scripts Disponibles
 - `npm start` : Démarre l'application en mode développement
-- `npm test` : Lance les tests
 - `npm run build` : Construit l'application pour la production
-- `npm run eject` : Éjecte la configuration CRA (irréversible)
 
 ## Support et Contact
 
 Pour toute question ou problème :
 1. Consulter la documentation
 2. Vérifier les logs de la console
-3. Contacter l'équipe de développement 
